@@ -59,9 +59,9 @@ const OrderManagement = () => {
 
   const filteredOrders = orders.filter(order => {
     const matchesSearch = 
-      order.customer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      order.customerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
       order.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      order.customer.phone?.includes(searchTerm);
+      order.customerPhone?.includes(searchTerm);
     const matchesStatus = statusFilter === "all" || order.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
@@ -139,8 +139,8 @@ const OrderManagement = () => {
                       <td className="py-3 px-4 font-body font-medium text-foreground">#{order.id.slice(-6)}</td>
                       <td className="py-3 px-4">
                         <div className="space-y-1">
-                          <p className="font-body font-medium text-foreground">{order.customer.name}</p>
-                          <p className="text-sm text-muted-foreground">{order.phone}</p>
+                          <p className="font-body font-medium text-foreground">{order.customerName}</p>
+                          <p className="text-sm text-muted-foreground">{order.customerPhone}</p>
                         </div>
                       </td>
                       <td className="py-3 px-4 font-body text-foreground max-w-xs truncate">
@@ -154,14 +154,17 @@ const OrderManagement = () => {
                       </td>
                       <td className="py-3 px-4">
                         <div className="space-y-1">
-                          <p className="font-body text-sm text-foreground">{formatTime(order.createdAt)}</p>
-                          <p className="text-xs text-muted-foreground">{formatDate(order.createdAt)}</p>
+                          <p className="font-body text-sm text-foreground">{formatTime(new Date(order.createdAt))}</p>
+                          <p className="text-xs text-muted-foreground">{formatDate(new Date(order.createdAt))}</p>
                         </div>
                       </td>
                       <td className="py-3 px-4">
                         <div className="flex space-x-2">
-                          <Button size="sm" variant="ghost" onClick={() => handleViewOrder(order)}>
+                          <Button size="sm" variant="ghost" onClick={() => handleViewOrder(order)} title="View Order">
                             <Eye className="h-4 w-4" />
+                          </Button>
+                          <Button size="sm" variant="ghost" onClick={() => handleViewOrder(order)} title="Edit Order">
+                            <Edit className="h-4 w-4" />
                           </Button>
                         </div>
                       </td>
