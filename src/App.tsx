@@ -13,6 +13,9 @@ import Dashboard from "./pages/admin/Dashboard";
 import OrderManagement from "./pages/admin/OrderManagement";
 import MenuManagement from "./pages/admin/MenuManagement";
 import CustomerManagement from "./pages/admin/CustomerManagement";
+import Promotions from "./pages/admin/Promotions";
+import Reports from "./pages/admin/Reports";
+import Settings from "./pages/admin/Settings";
 import { CustomerOrder } from "./pages/CustomerOrder";
 import { UserProfile } from "./pages/UserProfile";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
@@ -42,9 +45,9 @@ const App = () => (
                 <Route path="orders" element={<OrderManagement />} />
                 <Route path="menu" element={<MenuManagement />} />
                 <Route path="customers" element={<CustomerManagement />} />
-                <Route path="promotions" element={<div className="p-8"><h1 className="text-3xl font-heading font-bold">Promotions Coming Soon</h1></div>} />
-                <Route path="reports" element={<div className="p-8"><h1 className="text-3xl font-heading font-bold">Reports Coming Soon</h1></div>} />
-                <Route path="settings" element={<div className="p-8"><h1 className="text-3xl font-heading font-bold">Settings Coming Soon</h1></div>} />
+                <Route path="promotions" element={<Promotions />} />
+                <Route path="reports" element={<Reports />} />
+                <Route path="settings" element={<Settings />} />
               </Route>
               
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

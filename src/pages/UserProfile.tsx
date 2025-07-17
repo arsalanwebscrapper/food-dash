@@ -179,7 +179,7 @@ export const UserProfile: React.FC = () => {
 
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-muted-foreground" />
-                  <p className="text-sm">Member since {formatDate(user.createdAt)}</p>
+                  <p className="text-sm">Member since {formatDate(new Date(user.createdAt))}</p>
                 </div>
               </CardContent>
             </Card>
@@ -239,7 +239,7 @@ export const UserProfile: React.FC = () => {
                           <div>
                             <h4 className="font-semibold">Order #{order.id.slice(-6)}</h4>
                             <p className="text-sm text-muted-foreground">
-                              {formatDate(order.createdAt)} at {order.createdAt.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}
+                              {formatDate(new Date(order.createdAt))} at {new Date(order.createdAt).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}
                             </p>
                           </div>
                           <div className="text-right">

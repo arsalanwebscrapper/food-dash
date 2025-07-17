@@ -178,7 +178,7 @@ const Dashboard = () => {
                 recentOrders.map((order, index) => (
                   <tr key={index} className="border-b hover:bg-muted/50">
                     <td className="py-3 px-4 font-body font-medium text-foreground">#{order.id.slice(-6)}</td>
-                    <td className="py-3 px-4 font-body text-foreground">{order.customer.name}</td>
+                    <td className="py-3 px-4 font-body text-foreground">{order.customerName}</td>
                     <td className="py-3 px-4 font-body font-medium text-foreground">{formatCurrency(order.totalAmount)}</td>
                     <td className="py-3 px-4">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}>
