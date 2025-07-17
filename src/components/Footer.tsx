@@ -38,6 +38,7 @@ const Footer = () => {
               <li><button onClick={() => scrollToSection('menu')} className="text-gray-400 hover:text-white font-body transition-colors text-left">Menu</button></li>
               <li><button onClick={() => scrollToSection('features')} className="text-gray-400 hover:text-white font-body transition-colors text-left">Service</button></li>
               <li><button onClick={() => scrollToSection('about')} className="text-gray-400 hover:text-white font-body transition-colors text-left">About Us</button></li>
+              <li><button onClick={() => window.location.href = '/admin'} className="text-gray-400 hover:text-white font-body transition-colors text-left">Admin</button></li>
             </ul>
           </div>
 

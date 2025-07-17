@@ -72,6 +72,12 @@ const Header = () => {
               >
                 About Us
               </button>
+              <button 
+                onClick={() => navigate('/admin')} 
+                className="text-muted-foreground hover:text-primary font-medium font-heading transition-colors"
+              >
+                Admin
+              </button>
               {user && (
                 <button 
                   onClick={() => navigate('/profile')} 
